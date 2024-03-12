@@ -7,15 +7,18 @@ public class FirstExam {
         if (distance > 0 && distance <= 4) {
             deliveryCharge = 2;
         } else if (distance >= 5 && distance < 16) {
-            deliveryCharge = 5;
+            deliveryCharge = 5.0d;
         } else if (distance >= 16 && distance < 26) {
-            deliveryCharge = 10;
+            deliveryCharge = 10.0d;
         } else if (distance >= 26 && distance <= 50) {
-            deliveryCharge = 15;
+            deliveryCharge = 15.0d;
         } else {
-            deliveryCharge = 20;
+            deliveryCharge = 20.0d;
         }
         return deliveryCharge;
+    }
+    public static void provideTotal(String product, double total) {
+        System.out.println("Your total for " + product + " is: " + total);
     }
 
     public static void main(String[] args) {
@@ -23,9 +26,11 @@ public class FirstExam {
         int qty = 20;
         double productPrice = 5.0d;
         int miles = 10;
+
+
         double deliveryCharges = getDeliveryCharge(miles);
         double totalPrice = productPrice * qty + deliveryCharges;
-        System.out.println(totalPrice);
+        provideTotal(productName, totalPrice);
 
 
 
