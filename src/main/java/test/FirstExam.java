@@ -1,5 +1,7 @@
 package test;
 
+import java.util.Scanner;
+
 public class FirstExam {
 
     public static double getDeliveryCharge(int distance) {
@@ -18,14 +20,22 @@ public class FirstExam {
         return deliveryCharge;
     }
     public static void provideTotal(String product, double total) {
-        System.out.println("Your total for " + product + " is: " + total);
+        System.out.println("Your total for " + product + " is: " + total + " .Thank you for your business!");
     }
 
     public static void main(String[] args) {
-        String productName = "Rice";
-        int qty = 20;
-        double productPrice = 5.0d;
-        int miles = 10;
+        Scanner prodProfile = new Scanner(System.in);
+        System.out.println("Which product would you like to purchase?");
+        String productName = prodProfile.next();
+
+        System.out.println("How many units would you like to purchase?");
+        int qty = prodProfile.nextInt();
+
+        System.out.println("What is the price per unit?");
+        double productPrice = prodProfile.nextDouble();
+
+        System.out.println("What is the estimate delivery distance from our shop?");
+        int miles = prodProfile.nextInt();
 
 
         double deliveryCharges = getDeliveryCharge(miles);
